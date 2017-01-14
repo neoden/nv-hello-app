@@ -1,0 +1,13 @@
+{
+  "name": "docker_hello_app",
+  "version": "1.0.0",
+  "description": "Hello from IP-address",
+  "author": "Lenar Imamutdinov <lenar.imamutdinov@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "externalip": "^1.0.2"
+  }
+}

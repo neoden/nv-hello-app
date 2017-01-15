@@ -7,7 +7,7 @@ var rq = require('request');
 
 var server = http.createServer(function(request, response) {
     response.writeHead(200, {"Content-Type": "text/plain"});
-    rq('https://ifconfig.co/ip', function(error, rsp, body) {
+    rq('http://myexternalip.com/raw', function(error, rsp, body) {
         response.end(body);
     })
 });

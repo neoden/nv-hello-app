@@ -8,5 +8,6 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "request": "^2.79.0"
   }
 }

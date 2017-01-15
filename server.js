@@ -3,23 +3,13 @@
 const PORT = 8888
 
 var http = require('http');
-var os = require('os');
+var rq = require('request');
 
 var server = http.createServer(function(request, response) {
     response.writeHead(200, {"Content-Type": "text/plain"});
-
-    var interfaces = os.networkInterfaces();
-    var addresses = [];
-    for (var k in interfaces) {
-        for (var k2 in interfaces[k]) {
-            var address = interfaces[k][k2];
-            if (address.family === 'IPv4' && !address.internal) {
-                addresses.push(address.address);
-            }
-        }
-    }
-
-    response.end(addresses.join());
+    rq('https://ifconfig.co/ip', function(error, rsp, body) {
+        response.end(body);
+    })
 });
 
 server.listen(PORT);
